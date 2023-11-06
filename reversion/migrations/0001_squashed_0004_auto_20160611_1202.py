@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Revision',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date_created', models.DateTimeField(db_index=True, help_text='The date and time this revision was created.', verbose_name='date created')),
                 ('comment', models.TextField(blank=True, help_text='A text comment on this revision.', verbose_name='comment')),
                 ('user', models.ForeignKey(blank=True, help_text='The user who created this revision.', null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL, verbose_name='user')),
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Version',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('object_id', models.CharField(help_text='Primary key of the model under version control.', max_length=191)),
                 ('format', models.CharField(help_text='The serialization format used by this model.', max_length=255)),
                 ('serialized_data', models.TextField(help_text='The serialized form of this version of the model.')),
